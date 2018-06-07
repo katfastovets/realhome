@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Playfair+Display|Raleway:300,400,500,700');
 * {
 	box-sizing: border-box;
+	transition: all 1s;
 }
 body {
 	margin: 0;
@@ -8,6 +9,12 @@ body {
 }
 a {
 	text-decoration: none;
+}
+button,
+button:focus,
+button:active {
+	outline: none;
+	border: none;
 }
 .clearfix::before,
 .clearfix::after {
@@ -224,12 +231,12 @@ h2.conf2::before {
 	margin: 100px auto;
 	position: relative;
 }
-.team h1 {
+.team h2 {
 	margin: 0;
 	color: #242424;
 	font: 300 37px/65px Raleway;
 }
-.team h1 span {
+.team h2 span {
 	font-weight: 500;
 }
 .team a {
@@ -279,11 +286,11 @@ h2.conf2::before {
 	margin: 60px auto;
 	position: relative;
 }
-.subscribe h1 {
+.subscribe h2 {
 	color: #3c3c3c;
 	font: 300 37px/50px Raleway;
 }
-.subscribe h1 span {
+.subscribe h2 span {
 	font-weight: 700;
 }
 .subscribe form {
@@ -310,6 +317,7 @@ h2.conf2::before {
 	color: #ffffff;
 	font: 700 18px/60px Raleway;
 	text-transform: uppercase;
+	cursor: pointer;
 }
 
 footer {
@@ -322,7 +330,7 @@ footer {
 	width: 1149px;
 	margin: 80px auto;
 }
-footer h1 {
+footer h2 {
 	font: 300 28px/50px Raleway;
 }
 footer section {
@@ -392,17 +400,64 @@ address {
 	.wrapper_for_header {
 		width: 100%;
 	}
+	.wrapper_for_about {
+		padding-left: 14px;
+	}
 	.about a,
 	.about h1,
 	.about img {
-		margin-left: 10px;
+		/* margin-left: 10px; */
 	}
 	.about .description {
-		margin-left: 14px;
+		/* padding-left: 14px; */
+		margin-left: 0;
 		text-align: justify;
 	}
 	.about a:last-of-type {
 		margin-left: 0;
+	}
+	.wrapper_for_columns {
+		width: 524px;
+	}
+	.columns div:not(.wrapper_for_columns):nth-child(2) {
+		margin-right: 0;
+	}
+	/*.team {
+		position: relative;
+	}
+	.wrapper_for_team {
+		position: static;
+	}*/
+	.team h2 {
+		margin-left: 10px;
+	}
+	.wrapper_for_team {
+		width: 560px;
+	}
+	.photos div:nth-child(2n) {
+		margin-right: 0;
+	} 
+	.subscribe form {
+		position: static;
+		display: block;
+	}
+	.wrapper_for_subscribe {
+		width: 565px;
+	}
+	.subscribe {
+		text-align: center;
+	}
+	.wrapper_for_footer {
+		width: 50%;
+	}
+	footer section {
+		width: 50%;
+	}
+
+}
+@media (max-width: 800px) {
+	.wrapper_for_footer {
+		width: 433px;
 	}
 }
 @media (max-width: 800px) {
@@ -411,7 +466,7 @@ address {
 	}
 	.about .description {
 		display: block;
-		width: 97%;
+		width: 96%;
 		margin-right: 25px;
 	}
 	.about img {
@@ -431,18 +486,66 @@ address {
 		top: 0;	
 	}
 }
+@media (max-width: 598px) {
+	.subscribe button {
+		display: block;
+		width: 153px;
+		margin: 30px auto 0;
+	}
+}
+@media (max-width: 547px) {
+	.columns div:not(.wrapper_for_columns) {
+		margin-right: 0;
+	}
+	.wrapper_for_columns {
+		width: 230px;
+	}
+	.team a {
+		position: static;
+	}
+	.wrapper_for_team {
+		width: 266px;
+	}
+	.team {
+		text-align: center;
+	}
+	.team .photos div {
+		margin-right: 0;
+	}
+	.subscribe h2 span {
+		display: block;
+	}
+	.subscribe input {
+		margin-right: 0;
+	}
+	.wrapper_for_subscribe {
+		width: 100%;
+	}
+	.wrapper_for_footer {
+		width: 100%;
+	}
+	footer section {
+		display: block;
+		margin: 0 auto;
+	}
+}
 @media (max-width: 462px) {
 	header nav a {
 		padding: 5px;	
 	}
 }
 @media (max-width: 455px) {
-	#About span  {
+	.about h1 span  {
 		display: block;
 		margin-top: 20px;
 	}
-	#About {
+	.about h1 {
 		text-align: center;
+	}
+}
+@media (max-width: 410px) {
+	.subscribe input {
+		width: 100%;
 	}
 }
 @media (max-width: 395px) {
